@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterController</servlet-name>
+        <servlet-class>controller.RegisterController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterController</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ConfirmEmailController</servlet-name>
+        <servlet-class>controller.ConfirmEmailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmEmailController</servlet-name>
+        <url-pattern>/confirm-email</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LanguageController</servlet-name>
+        <servlet-class>controller.LanguageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LanguageController</servlet-name>
+        <url-pattern>/change-language</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>ObjectifyRegisterFilter</filter-name>
+        <filter-class>filter.ObjectifyRegisterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyRegisterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>LanguageFilter</filter-name>
+        <filter-class>filter.LanguageFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LanguageFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
